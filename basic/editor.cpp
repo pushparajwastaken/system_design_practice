@@ -1,5 +1,6 @@
 #include<vector>
 #include<iostream>
+#include <fstream>
 using namespace std;
 
 
@@ -34,28 +35,39 @@ string RenderDocument(){
         RenderedDocument=result;
     }
     return RenderedDocument;
-
 }
 //a method to savetofile
-
+void saveToFile(){
+    ofstream file("document.txt");
+    if(file.is_open()){
+        file<<RenderDocument();
+        file.close();
+        cout<<"Document saved to document.txt"<<endl;
+    }else{
+        cout<<"Error Unable to open file for writing"<<endl;
+    }
+    //we can also use a try catch block
+}
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int main(){
+    DocumentEditor editor;
+    editor.addtext("Hello,World!");
+    editor.addImage("lockscreem,jpg");
+    editor.addtext("It is a word document");
+    cout<<editor.RenderDocument()<<endl;
+    editor.saveToFile();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
