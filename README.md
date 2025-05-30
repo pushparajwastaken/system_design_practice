@@ -1,1 +1,1 @@
-simple text editor to understand basic syystem design principles
+simple text editor to understand basic system design principles
