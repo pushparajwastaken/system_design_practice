@@ -1,1 +1,2 @@
-simple text editor to understand basic system design principles
+this repo is just for me to practice simple system design concepts
+
