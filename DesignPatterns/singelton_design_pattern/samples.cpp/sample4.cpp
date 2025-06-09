@@ -1,23 +1,27 @@
-/*we have been getting two different objects in all the last samples but our motto is to get a single object
-so to achieve this goal we'll create a variable which will hold the instance of the singelton class it will see if it has the 
-instance of the class if it has it will return the same instance and if it doesn't it will create an instance and then return it */
 #include<iostream>
+#include<mutex>
 using namespace std;
 class Singelton{
    private:
     static Singelton * instance;
+    static mutex mtx;
     Singelton(){
         cout<<"Constructor Called"<<endl;
     }
     public:
     static Singelton* getInstance(){
+       //lock for thread safety
+       if(instance==nullptr){
+        lock_guard<mutex> lock(mtx);
         if(instance==nullptr){
+            
              instance=new Singelton();
-        }
+        }}
         return instance;
     }
 };
 Singelton* Singelton::instance=nullptr;
+mutex Singleton::mtx;
 int main(){
     Singelton* S1=Singelton::getInstance();
    Singelton* S2=Singelton::getInstance();
