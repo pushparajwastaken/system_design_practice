@@ -38,3 +38,26 @@ c.Cart-restaurant,menu items,total(),addtocart(item),clear(),isEmpty().
 c-a simple association,one-to-many relationship
 c-2 Composition Relationship, cart can't exist without a user
 ```
+
+`Integrating Payment`-Using Strategy Design Pattern
+(
+Strategy Design pattern defines a family of algorithm and then into separate classes so that they can be changed at run time
+)
+3.Payment Strategy-pay()
+3.a. Netbanking-pay(){}
+3.b. Credit Card-pay(){}
+3.c. UPI-pay(){}
+
+4. Order Object -id,restaurant,menu items,user,payment strategy,gettype(),--this will be a abstract class since gettype() is an abstract object
+   4.a.Delivery Order-gettype()
+   4.b.Pickup Order-gettype()
+   `We're gonna make a order manager and order factory(from Factory Design Pattern)-we could've made restaurant factory also but we gave the functinality of restaurant creation to the manager itself`
+5. Order Factory-createOrder()--it is an interface
+   (
+   5-4 has a 'has-a' relationship
+   )
+   5.a.NowOrderFactory-createorder(){}
+   5.b.ScheduleLaterFactory-createorder(){}
+   (
+   5.a.and 5.b. can make both the type of orders
+   )
