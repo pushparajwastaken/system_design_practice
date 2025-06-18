@@ -48,7 +48,7 @@ Strategy Design pattern defines a family of algorithm and then into separate cla
 3.b. Credit Card-pay(){}
 3.c. UPI-pay(){}
 
-4. Order Object -id,restaurant,menu items,user,payment strategy,gettype(),--this will be a abstract class since gettype() is an abstract object
+4. Order -id,restaurant,menu items,user,payment strategy,gettype(),--this will be a abstract class since gettype() is an abstract object
    4.a.Delivery Order-gettype()
    4.b.Pickup Order-gettype()
    `We're gonna make a order manager and order factory(from Factory Design Pattern)-we could've made restaurant factory also but we gave the functinality of restaurant creation to the manager itself`
@@ -61,3 +61,12 @@ Strategy Design pattern defines a family of algorithm and then into separate cla
    (
    5.a.and 5.b. can make both the type of orders
    )
+6. Order Manager-orders,addorders()(
+   one-to-many relationship between order and order manager
+   6-4 has an aggregation relationship,
+   singelton class
+   )
+7. Notification Service-(integrated from other parties)notify(order)(
+   notification service has a order
+   )
+8. Tomato(name of the app)-this class is important because it is an orchaestrator,it deals with all the classes and gives the user a single point of contact
