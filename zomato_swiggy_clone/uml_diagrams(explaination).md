@@ -69,4 +69,4 @@ Strategy Design pattern defines a family of algorithm and then into separate cla
 7. Notification Service-(integrated from other parties)notify(order)(
    notification service has a order
    )
-8. Tomato(name of the app)-this class is important because it is an orchaestrator,it deals with all the classes and gives the user a single point of contact
+8. Tomato(name of the app)-this class is important because it is an orchaestrator,it deals with all the classes and gives the user a single point of contact 
